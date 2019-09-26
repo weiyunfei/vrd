@@ -185,7 +185,7 @@ class VTranse(object):
 			blob = get_blob_pred(roidb_use, im_scale, self.index_sp, self.N_each_batch, batch_id)
 			feed_dict = {self.image: im, self.sbox: blob['sub_box'], self.obox: blob['obj_box'], self.rela_label: blob['rela'],
 						 self.keep_prob: 0.5}
-			_, losses = sess.run([RD_train, self.losses], feed_dict = feed_dict)
+			_, losses = sess.run([RD_train, self.losses], feed_dict=feed_dict)
 			RD_loss = RD_loss + losses['rd_loss']
 			acc = acc + losses['acc']
 
